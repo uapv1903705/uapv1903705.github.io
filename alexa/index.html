@@ -3,17 +3,15 @@
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>CERIWebGame</title>
-		<script src="https://uapv1903705.github.io/alexa/Build/UnityLoader.js"></script>
+		<script src="https://uapv1903705.github.io/alexa/build/UnityLoader.js"></script>
 		<script src="https://cdn.html.games.alexa.a2z.com/alexa-html/latest/alexa-html.js"></script>
 	</head>
 	<body style="background-color: black; color: white; padding: 0px; margin: 0px">
 		<div name="outputDiv" style="margin: auto; width: 90%; text-align:center; font-size: 32px; padding: 8px; margin-top: 20px">
-			<p style="font-size: 24px" name="outputStat"><u><b>[Statut]</b></u></p>
-			<p style="font-size: 20px" name="outputConfiance">[Confiance]</p>
-			<p name="outputTxt"><b>Cliquez Moi!</b></p>
+			<p style="font-size: 24px" name="outputStat"><b><span id="alexaStatus">Probleme.</span></b></p>
 		</div>
 		<div class="webgl-content" style="width: 90%; height: 70%; margin: auto;">
-			<p>Viewport: <span id="alexaStatus">Attente d'alexa...</span></p>
+			<p>Viewport:</p>
 			<div id="unityContainer"></div>
 		</div>
 	</body>
@@ -52,76 +50,7 @@
 		function sendInputText()
 		{
 			unityInstance.SendMessage("BrowserTest", "setText", outputTxt.innerHTML);
-		}
-		
-		// Web Speech API
-		var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
-		var bResultat = false;
-		
-		var synth = window.speechSynthesis;
-		var langue = null;
-		
-		setTimeout(() =>	// Delai nécessaire 
-		{ 
-			for(voice of synth.getVoices())
-			{
-				if(voice.lang == "fr-FR" && voice.name.includes("Google"))
-				{
-					langue = voice;
-					return;
-				}
-			}
-		}, 10);
-		
-		var recognition = new SpeechRecognition();
-		recognition.continuous = false;
-		recognition.lang = 'fr-FR';
-		recognition.interimResults = true;
-		
-		outputDiv.onclick = function() 
-		{
-			recognition.start();
-		}
-		recognition.onstart = function()
-		{
-			outputStat.innerHTML = "Début de requête";
-		}
-		recognition.onspeechstart = function()
-		{
-			outputStat.innerHTML = "En Écoute...";
-		}
-		recognition.onresult = function(event)
-		{
-			bResultat = true;
-			var output = event.results[0][0].transcript;
-			outputTxt.textContent = output;
-			outputConfiance.innerHTML = 'Confiance du transcript: ' + event.results[0][0].confidence;
-		}
-		recognition.onspeechend = function() 
-		{
-			recognition.stop();
-			outputStat.innerHTML = "Fin de phrase.";
-		}
-		recognition.onend = function()
-		{
-			if(!bResultat)
-			{
-				outputStat.innerHTML = "Fin de requête. Pas de résultat!";
-				return;
-			}
-			outputStat.innerHTML = "Fin de requête.";
-			voice = new SpeechSynthesisUtterance(outputTxt.textContent);
-			voice.voice = langue;
-			synth.speak(voice);
-			sendInputText();
-			bResultat = false;
-		}
-		recognition.onerror = function(event) 
-		{
-			diagnostic.textContent = 'En erreur: ' + event.error;
-		}
-		
-		
+		}		
 	</script>
   
 </html>
