@@ -33,10 +33,10 @@
 					 message
 				 } = args;
 				alexaClient = alexa;
-				document.getElementById('alexaStatus').innerHTML = 'Alexa is ready :)';
+				document.getElementById('alexaStatus').innerHTML += ' | Alexa is ready :)';
 			 })
 			 .catch(error => {
-				document.getElementById('alexaStatus').innerHTML = 'Alexa not ready :(';
+				document.getElementById('alexaStatus').innerHTML = ' | Alexa not ready :(';
 			 }); 
 	}
 	catch (error) 
