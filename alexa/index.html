@@ -13,6 +13,7 @@
 			<p name="outputTxt"><b>Sortie textuelle</b></p>
 			
 		</div>
+		<p>19/03/2021 10:46</p>
 		<div class="webgl-content" style="width: 90%; height: 70%; margin: auto;">
 			<p>Viewport:</p>
 			<div id="unityContainer"></div>
@@ -21,19 +22,27 @@
 	
 	
 	<script>
-	var alexaClient;
-	Alexa.create({version: '1.1'})
-		 .then((args) => {
-			 const {
-				 alexa,
-				 message
-			 } = args;
-			alexaClient = alexa;
-			document.getElementById('alexaStatus').innerHTML = 'Alexa is ready :)';
-		 })
-		 .catch(error => {
-			document.getElementById('alexaStatus').innerHTML = 'Alexa not ready :(';
-		 }); 
+	try
+	{
+		var alexaClient;
+		Alexa.create({version: '1.1'})
+			 .then((args) => {
+				 const {
+					 alexa,
+					 message
+				 } = args;
+				alexaClient = alexa;
+				document.getElementById('alexaStatus').innerHTML = 'Alexa is ready :)';
+			 })
+			 .catch(error => {
+				document.getElementById('alexaStatus').innerHTML = 'Alexa not ready :(';
+			 }); 
+	}
+	catch (error) 
+	{
+		document.getElementById('alexaStatus').innerHTML = error;
+	}
+
 	</script>
 
 	<script>
