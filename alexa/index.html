@@ -43,16 +43,12 @@
 	{
 		document.getElementById('alexaStatus').innerHTML = error;
 	}
-	try
-	{
-	Alexa.skill.onMessage(message =>
-	{
-		document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
-	})
-	}catch (error)
-	{
-		document.getElementById('alexaStatus').innerHTML = error;
-	}
+
+	Alexa.skill.onMessage(messageReceivedCallback);
+
+	const messageReceivedCallback = function(message){
+			document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
+	};
 
 	</script>
 
