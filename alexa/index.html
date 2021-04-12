@@ -8,41 +8,44 @@
 	</head>
 	<body style="background-color: black; color: white; padding: 0px; margin: 0px">
 		<div name="outputDiv" style="margin: auto; width: 90%; text-align:center; font-size: 32px; padding: 8px; margin-top: 20px">
-			
+
 			<p style="font-size: 24px"><span id="alexaStatus">Attente du code JS d'Alexa...</span></p>
 			<p name="outputTxt"><b>Sortie textuelle</b></p>
-			
+
 		</div>
 		<p>12/04/2021 14:38</p>
+		<p name="test_alexa">J'attend ton message Alexa.</p>
 		<div class="webgl-content" style="width: 90%; height: 70%; margin: auto;">
 			<p>Viewport:</p>
 			<div id="unityContainer"></div>
 		</div>
 	</body>
-	
-	
+
+
 	<script>
 	try
 	{
 		var alexaClient;
-		Alexa.create({version: '1.1'}).then((args) => 
+		Alexa.create({version: '1.1'}).then((args) =>
 		{
 			const{alexa,message} = args;
-			
+
 			alexaClient = alexa;
 			document.getElementById('alexaStatus').innerHTML = 'Alexa is ready :)';
-			
+
 		})
-		.catch(error => 
+		.catch(error =>
 		{
 			document.getElementById('alexaStatus').innerHTML = error;//'Alexa not ready :(';
 		});
 	}
-	catch (error) 
+	catch (error)
 	{
 		document.getElementById('alexaStatus').innerHTML = error;
 	}
 
+	var alexaMessage=alexa.skill.onMessage(callback: (message: any));
+	document.write(alexaMessage);
 	</script>
 
 	<script>
@@ -50,7 +53,7 @@
 		var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json");
 		let outputDiv = document.getElementsByName("outputDiv")[0];
 		let outputTxt = document.getElementsByName("outputTxt")[0];
-		
+
 		function color(r,g,b)
 		{
 			r *= 255; g *= 255; b *= 255;
@@ -60,7 +63,11 @@
 		{
 			unityInstance.SendMessage("BrowserTest", "setText", outputTxt.innerHTML);
 		}
-		
+		function test()
+		{
+			document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
+		}
+
 	</script>
-  
+
 </html>
