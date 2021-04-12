@@ -44,7 +44,11 @@
 		document.getElementById('alexaStatus').innerHTML = error;
 	}
 
-	var alexaMessage=alexa.skill.onMessage(callback: (message: any));
+	var alexaMessage;
+	var mes;
+	alexaMessage=alexa.skill.onMessage(callback: (message: any));
+	mes = "message d'alexa";
+	document.write(mes);
 	document.write(alexaMessage);
 	</script>
 
