@@ -44,12 +44,11 @@
 		document.getElementById('alexaStatus').innerHTML = error;
 	}
 
-	var alexaMessage;
-	var mes;
-	alexaMessage=alexa.skill.onMessage(callback: (message: any));
-	mes = "message d'alexa";
-	document.write(mes);
-	document.write(alexaMessage);
+	Alexa.skill.onMessage(callback: message =>
+	{
+		document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
+	})
+
 	</script>
 
 	<script>
@@ -66,10 +65,6 @@
 		function sendInputText()
 		{
 			unityInstance.SendMessage("BrowserTest", "setText", outputTxt.innerHTML);
-		}
-		function test()
-		{
-			document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
 		}
 
 	</script>
