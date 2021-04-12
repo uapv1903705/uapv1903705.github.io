@@ -33,12 +33,11 @@
 			alexaClient = alexa;
 			document.getElementById('alexaStatus').innerHTML = 'Alexa is ready :)';
 
-			alexaClient.skill.onMessage(messageReceivedCallback);
-
 			const messageReceivedCallback = function(message){
 					document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
 			};
 
+			alexaClient.skill.onMessage(messageReceivedCallback);
 		})
 		.catch(error =>
 		{
