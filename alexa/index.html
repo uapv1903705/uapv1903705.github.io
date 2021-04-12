@@ -45,7 +45,7 @@
 	}
 	try
 	{
-	Alexa.skill.onMessage(callback: message =>
+	Alexa.skill.onMessage(message =>
 	{
 		document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
 	})
