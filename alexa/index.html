@@ -13,7 +13,7 @@
 			<p name="outputTxt"><b>Sortie textuelle</b></p>
 
 		</div>
-		<p>14/04/2021 15:15</p>
+		<p>14/04/2021 15:22</p>
 		<p name="test_alexa"></p>
 		<div class="webgl-content" style="width: 90%; height: 70%; margin: auto;">
 			<p>Viewport:</p>
@@ -45,7 +45,7 @@
 	}
 	try {
 		alexaClient.skill.onMessage(messageReceivedCallback);
-		document.getElementsByName('test_alexa').innerHTML='J\'attend ton message Alexa.';
+		document.getElementsByName('test_alexa').innerHTML='J\'attend le message d\'Alexa.';
 
 		const messageReceivedCallback = function(message){
 				document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
