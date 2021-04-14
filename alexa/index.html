@@ -43,9 +43,10 @@
 	{
 		document.getElementById('alexaStatus').innerHTML = error;
 	}
+
 	try {
-		alexaClient.skill.onMessage(messageReceivedCallback);
 		document.getElementsByName('test_alexa').innerHTML='J\'attend le message d\'Alexa.';
+		alexaClient.skill.onMessage(messageReceivedCallback);
 
 		const messageReceivedCallback = function(message){
 				document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
