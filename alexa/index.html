@@ -13,7 +13,7 @@
 			<p name="outputTxt"><b>Sortie textuelle</b></p>
 
 		</div>
-		<p>14/04/2021 16:40</p>
+		<p>14/04/2021 16:47</p>
 		<p name="test_alexa">Attente de modification</p>
 		<div class="webgl-content" style="width: 90%; height: 70%; margin: auto;">
 			<p>Viewport:</p>
@@ -35,8 +35,14 @@
 			document.getElementById('alexaStatus').innerHTML = 'Alexa is ready :)';
 
 			alexaClient.skill.onMessage((message) => {
-				document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
-
+				if(message)
+				{
+					document.getElementsByName('test_alexa').innerHTML='Message reçu 5/5!';
+				}
+				else
+				{
+					document.getElementsByName('test_alexa').innerHTML=' Pas de message';
+				}
 			});
 		})
 		.catch(error =>
