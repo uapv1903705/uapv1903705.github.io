@@ -40,10 +40,8 @@
 				}
 			});
 
-			if(document.getElementById('alexaStatus').innerHTML=='Message reçu 5/5!')
-			{
-				envoieMessage(alexaClient);
-			}
+			envoieMessage(alexaClient);
+			
 		})
 		.catch(error =>
 		{
