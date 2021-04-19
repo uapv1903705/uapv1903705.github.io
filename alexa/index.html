@@ -40,10 +40,10 @@
 				}
 			});
 
-			alexaClient.skill.sendMessage({
-				intent:"TestIntent",
-				message="Bonjour Alexa."
-			});
+			if(document.getElementById('alexaStatus').innerHTML=='Message reçu 5/5!')
+			{
+				envoieMessage(alexaClient);
+			}
 		})
 		.catch(error =>
 		{
@@ -55,6 +55,13 @@
 		document.getElementById('alexaStatus').innerHTML = error;
 	}
 
+	function envoieMessage(alexaClient)
+	{
+		alexaClient.skill.sendMessage({
+			intent:"TestIntent",
+			message="Bonjour Alexa."
+		});
+	}
 	</script>
 
 	<script>
