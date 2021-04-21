@@ -94,11 +94,11 @@
 		}
 		function sendInputText()
 		{
-			unityInstance.SendMessage("BrowserTest", "setText", outputTxt.innerHTML);
+			unityInstance.SendMessage("GameManager", "setText", outputTxt.innerHTML);
 		}
 		function sendMessageUnity(message)
 		{
-			unityInstance.SendMessage("BrowserTest", "setText", JSON.stringify(message));
+			unityInstance.SendMessage("GameManager", "setText", JSON.stringify(message));
 		}
 
 	</script>
