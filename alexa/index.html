@@ -13,7 +13,7 @@
 			<p name="outputTxt"><b>Sortie textuelle</b></p>
 
 		</div>
-		<p>23/04/2021 15:41</p>
+		<p>23/04/2021 16:00</p>
 		<div class="webgl-content" style="width: 90%; height: 70%; margin: auto;">
 			<p>Viewport:</p>
 			<div id="unityContainer"></div>
@@ -77,7 +77,7 @@
 		unityInstance.SendMessage("Player", "changerAngle", "");
 		alexaClient.skill.sendMessage({
 			intent:"message",
-			retour:"changeAngle"
+			retour:"changeAngle",
 			message:"Voilà!"
 		});
 	}
