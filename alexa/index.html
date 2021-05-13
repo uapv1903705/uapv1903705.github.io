@@ -13,7 +13,7 @@
 			<p name="outputTxt"><b>Sortie textuelle</b></p>
 
 		</div>
-		<p>23/04/2021 17:53</p>
+		<p>13/05/2021 16:16</p>
 		<div class="webgl-content" style="width: 90%; height: 70%; margin: auto;">
 			<p>Viewport:</p>
 			<div id="unityContainer"></div>
@@ -48,6 +48,9 @@
 								break;
 						case "retourPiece":
 								RetourPiece(alexaClient);
+								break;
+						case "ouvrirConteneur":
+								OuvrirConteneur(alexaClient);
 								break;
 						default:
 								return;
@@ -107,6 +110,17 @@
 			intent:"message",
 			retour:"retourPiece",
 			message:"Voilà!"
+		});
+	}
+
+	function OuvrirConteneur(alexaClient)
+	{
+		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
+		unityInstance.SendMessage("Player", "ouvrirMeuble", "");
+		alexaClient.skill.sendMessage({
+			intent:"message",
+			retour:"ouvrirConteneur",
+			message:"Tout de suite!"
 		});
 	}
 	</script>
