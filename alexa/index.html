@@ -116,7 +116,7 @@
 	function OuvrirConteneur(alexaClient)
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
-		unityInstance.SendMessage("Player", "ouvrirMeuble", "");
+		unityInstance.SendMessage("Player", "ouvrirConteneur", "");
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"ouvrirConteneur",
