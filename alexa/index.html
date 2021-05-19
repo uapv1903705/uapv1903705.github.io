@@ -130,7 +130,7 @@
 	function VersPersonnage(alexaClient, personnage)
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
-		unityInstance.SendMessage("Player", "allerVersPersonage", personnage);
+		unityInstance.SendMessage("Player", "allerVersPersonnage", personnage);
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"personnage",
