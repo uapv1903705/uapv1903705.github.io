@@ -20,7 +20,7 @@
 			<div id="unityContainer"></div>
 		</div>
 		<br><br><br>
-		<p>build: 23/05/2021 20:19</p>
+		<p>build: 23/05/2021 21:11</p>
 
 		<p>Triche:</p>
 		<p id="triche">XXXX</p>
@@ -29,10 +29,9 @@
 
 	<script>
 	var placements = null;
-
+	var alexaClient;
 	try
 	{
-		var alexaClient;
 		Alexa.create({version: '1.1'}).then((args) =>
 		{
 			const{alexa,message} = args;
@@ -67,7 +66,8 @@
 								try
 								{
 									placements = message.objet;
-									setTriche("b i g :"+message.objet[0].piece);
+									setTriche(JSON.stringify(placements));
+									getConfig(placements);
 								}
 								catch(error)
 								{
@@ -204,11 +204,18 @@
 		}
 		function notifyJeuPret()
 		{
-			unityInstance.SendMessage("GameManager","initObjetsJson", JSON.stringify(placements));
+			alexaClient.skill.sendMessage({
+				intent:"message",
+				retour:"config",
+			});
 		}
 		function notifyArrivePiece(){}
 		function notifyTrouveObjet(objet){}
 
+		fonction getConfig()
+		{
+			unityInstance.SendMessage("GameManager","initObjetsJson", JSON.stringify(placements));
+		}
 	</script>
 
 </html>
