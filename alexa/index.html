@@ -6,8 +6,8 @@
 		<script src="https://uapv1903705.github.io/alexa/Build/UnityLoader.js"></script>
 		<script src="https://cdn.html.games.alexa.a2z.com/alexa-html/latest/alexa-html.js"></script>
 	</head>
-	
-	
+
+
 	<body style="background-color: black; color: white; padding: 0px; margin: 0px">
 		<div name="outputDiv" style="margin: auto; width: 90%; text-align:center; font-size: 32px; padding: 8px; margin-top: 10px">
 
@@ -20,7 +20,7 @@
 			<div id="unityContainer"></div>
 		</div>
 		<br>
-		<p>build: 22/05/2021 19:56</p>
+		<p>build: 23/05/2021 14:35</p>
 	</body>
 
 
@@ -57,6 +57,9 @@
 								break;
 						case "personnage":
 								VersPersonnage(alexaClient, message.personnage);
+								break;
+						case "test":
+								VersPersonnage(alexaClient, message.objet);
 								break;
 						default:
 								return;
@@ -139,6 +142,12 @@
 			retour:"personnage",
 			message:"Bonjour!"
 		});
+	}
+
+	function OuvrirConteneur(objet)
+	{
+		document.getElementById('alexaStatus').innerHTML=objet;
+		//unityInstance.SendMessage("Player", "ouvrirConteneur", "");
 	}
 
 	</script>
