@@ -20,7 +20,7 @@
 			<div id="unityContainer"></div>
 		</div>
 		<br><br><br>
-		<p>build: 23/05/2021 19:48</p>
+		<p>build: 23/05/2021 19:51</p>
 
 		<p>Triche:</p>
 		<p id="triche">XXXX</p>
@@ -64,8 +64,15 @@
 								VersPersonnage(alexaClient, message.personnage);
 								break;
 						case "config":
-								placements = message.objet;
-								setTriche(JSON.stringify(placements));
+								try
+								{
+									placements = message.objet;
+									setTriche(JSON.stringify(placements));
+								}
+								catch(error)
+								{
+									document.getElementById('triche').innerHTML = error;
+								}
 								break;
 						default:
 								return;
