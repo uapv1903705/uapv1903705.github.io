@@ -152,6 +152,17 @@
 		});
 	}
 
+	function InspecterObjet(alexaClient, objet)
+	{
+		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
+		unityInstance.SendMessage("Player", "ramasserObjet", objet);
+		alexaClient.skill.sendMessage({
+			intent:"message",
+			retour:"ramasserObjet",
+			message:"hmm, Voyons voir..."
+		});
+	}
+
 	function TestObjet(objet)
 	{
 		document.getElementById('alexaStatus').innerHTML=objet;
