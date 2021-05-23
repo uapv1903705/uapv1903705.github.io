@@ -193,7 +193,7 @@
 			unityInstance.SendMessage("GameManager", "setText", JSON.stringify(message));
 		}
 		function notifyJeuPret(objet){
-			unityInstance.SendMessage("GameManager","setConfiguration", JSON.stringify(objet));
+			unityInstance.SendMessage("GameManager","initObjetsJson", JSON.stringify(objet));
 		}
 		function notifyArrivePiece(){}
 		function notifyTrouveObjet(objet){}
