@@ -61,8 +61,8 @@
 						case "personnage":
 								VersPersonnage(alexaClient, message.personnage);
 								break;
-						case "test":
-								TestObjet(message.objet);
+						case "config":
+								notifyJeuPret(message.objet);
 								break;
 						default:
 								return;
@@ -192,7 +192,9 @@
 		{
 			unityInstance.SendMessage("GameManager", "setText", JSON.stringify(message));
 		}
-		function notifyJeuPret(){}
+		function notifyJeuPret(objet){
+			unityInstance.SendMessage("GameManager","setConfiguration", JSON.stringify(objet));
+		}
 		function notifyArrivePiece(){}
 		function notifyTrouveObjet(objet){}
 
