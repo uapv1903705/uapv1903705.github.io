@@ -20,7 +20,7 @@
 			<div id="unityContainer"></div>
 		</div>
 		<br>
-		<p>build: 23/05/2021 14:35</p>
+		<p>build: 23/05/2021 15:14</p>
 	</body>
 
 
@@ -59,7 +59,7 @@
 								VersPersonnage(alexaClient, message.personnage);
 								break;
 						case "test":
-								VersPersonnage(alexaClient, message.objet);
+								TestObjet(message.objet);
 								break;
 						default:
 								return;
@@ -144,7 +144,7 @@
 		});
 	}
 
-	function OuvrirConteneur(objet)
+	function TestObjet(objet)
 	{
 		document.getElementById('alexaStatus').innerHTML=objet;
 		//unityInstance.SendMessage("Player", "ouvrirConteneur", "");
