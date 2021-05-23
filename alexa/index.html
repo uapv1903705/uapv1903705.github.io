@@ -29,7 +29,7 @@
 
 	<script>
 	var placements = null;
-	
+
 	try
 	{
 		var alexaClient;
@@ -67,7 +67,7 @@
 								try
 								{
 									placements = message.objet;
-									setTriche(JSON.stringify(placements));
+									setTriche(message.objet[0].piece);
 								}
 								catch(error)
 								{
