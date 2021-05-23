@@ -28,6 +28,8 @@
 
 
 	<script>
+	var placements = null;
+	
 	try
 	{
 		var alexaClient;
@@ -62,7 +64,7 @@
 								VersPersonnage(alexaClient, message.personnage);
 								break;
 						case "config":
-								notifyJeuPret(message.objet);
+								placements = message.objet;
 								break;
 						default:
 								return;
@@ -192,8 +194,9 @@
 		{
 			unityInstance.SendMessage("GameManager", "setText", JSON.stringify(message));
 		}
-		function notifyJeuPret(objet){
-			unityInstance.SendMessage("GameManager","initObjetsJson", JSON.stringify(objet));
+		function notifyJeuPret()
+		{
+			unityInstance.SendMessage("GameManager","initObjetsJson", JSON.stringify(placements));
 		}
 		function notifyArrivePiece(){}
 		function notifyTrouveObjet(objet){}
