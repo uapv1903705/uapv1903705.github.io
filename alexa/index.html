@@ -20,7 +20,7 @@
 			<div id="unityContainer"></div>
 		</div>
 		<br><br><br>
-		<p>build: 24/05/2021 10:47</p>
+		<p>build: 24/05/2021 11:50</p>
 
 		<p>Triche:</p>
 		<p id="triche">XXXX</p>
@@ -67,7 +67,7 @@
 								setTriche(JSON.stringify(placements));
 								getConfig(placements);
 								break;
-						case "personnage":
+						case "objet":
 								InspecterObjet(alexaClient, message.objet);
 								break;
 						default:
@@ -122,7 +122,6 @@
 			intent:"message",
 			retour:"conteneur",
 			conteneur: conteneur,
-			message:"Voyons ce qu'il y a dedans!"
 		});
 	}
 
