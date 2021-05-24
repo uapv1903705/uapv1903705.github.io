@@ -95,23 +95,26 @@
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "allerDansPiece", piece);
+		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"deplacement",
 			piece:piece,
 			message:"Nous sommes arrivé dans "+piece
-		});
+		});*/
 	}
 
 	function changeAngle(alexaClient)
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "changerAngle", "");
+		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"changeAngle",
 			message:"Voilà!"
 		});
+		*/
 	}
 
 	function VersConteneur(alexaClient, conteneur)
@@ -129,44 +132,52 @@
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "retourPiece", "");
+		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"retourPiece",
 			message:"Voilà!"
 		});
+		*/
 	}
 
 	function OuvrirConteneur(alexaClient)
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "ouvrirConteneur", "");
+		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"ouvrirConteneur",
 			message:"Tout de suite!"
 		});
+		*/
 	}
 
 	function VersPersonnage(alexaClient, personnage)
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "allerVersPersonnage", personnage);
+		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"personnage",
 			message:"Bonjour!"
 		});
+		*/
 	}
 
 	function InspecterObjet(alexaClient, objet)
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "ramasserObjet", objet);
+		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"ramasserObjet",
 			message:"hmm, Voyons voir..."
 		});
+		*/
 	}
 
 	function TestObjet(objet)
