@@ -20,7 +20,7 @@
 			<div id="unityContainer"></div>
 		</div>
 		<br><br><br>
-		<p>build: 24/05/2021 11:50</p>
+		<p>build: 24/05/2021 12:23</p>
 
 		<p>Triche:</p>
 		<p id="triche">XXXX</p>
@@ -95,26 +95,23 @@
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "allerDansPiece", piece);
-		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"deplacement",
 			piece:piece,
-			message:"Nous sommes arrivé dans "+piece
-		});*/
+			//message:"Nous sommes arrivé dans "+piece
+		});
 	}
 
 	function changeAngle(alexaClient)
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "changerAngle", "");
-		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"changeAngle",
-			message:"Voilà!"
+			//message:"Voilà!"
 		});
-		*/
 	}
 
 	function VersConteneur(alexaClient, conteneur)
@@ -132,52 +129,44 @@
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "retourPiece", "");
-		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"retourPiece",
-			message:"Voilà!"
+			//message:"Voilà!"
 		});
-		*/
 	}
 
 	function OuvrirConteneur(alexaClient)
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "ouvrirConteneur", "");
-		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"ouvrirConteneur",
-			message:"Tout de suite!"
+			//message:"Tout de suite!"
 		});
-		*/
 	}
 
 	function VersPersonnage(alexaClient, personnage)
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "allerVersPersonnage", personnage);
-		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"personnage",
-			message:"Bonjour!"
+			//message:"Bonjour!"
 		});
-		*/
 	}
 
 	function InspecterObjet(alexaClient, objet)
 	{
 		//document.getElementById('alexaStatus').innerHTML='Envoie de la réponse';
 		unityInstance.SendMessage("Player", "ramasserObjet", objet);
-		/*
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"ramasserObjet",
-			message:"hmm, Voyons voir..."
+			//message:"hmm, Voyons voir..."
 		});
-		*/
 	}
 
 	function TestObjet(objet)
