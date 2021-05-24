@@ -20,7 +20,7 @@
 			<div id="unityContainer"></div>
 		</div>
 		<br><br><br>
-		<p>build: 23/05/2021 21:21</p>
+		<p>build: 24/05/2021 10:47</p>
 
 		<p>Triche:</p>
 		<p id="triche">XXXX</p>
@@ -63,16 +63,12 @@
 								VersPersonnage(alexaClient, message.personnage);
 								break;
 						case "config":
-								try
-								{
-									placements = message.objet;
-									setTriche(JSON.stringify(placements));
-									getConfig(placements);
-								}
-								catch(error)
-								{
-									document.getElementById('triche').innerHTML = error;
-								}
+								placements = message.objet;
+								setTriche(JSON.stringify(placements));
+								getConfig(placements);
+								break;
+						case "personnage":
+								InspecterObjet(alexaClient, message.objet);
 								break;
 						default:
 								return;
@@ -125,6 +121,7 @@
 		alexaClient.skill.sendMessage({
 			intent:"message",
 			retour:"conteneur",
+			conteneur: conteneur,
 			message:"Voyons ce qu'il y a dedans!"
 		});
 	}
